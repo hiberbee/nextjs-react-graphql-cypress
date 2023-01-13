@@ -5,19 +5,26 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start:frontend": "next start",
+    "start:api": "graphql-faker --port=4000 --open schema.graphql",
+    "test": "cypress open",
     "lint": "next lint"
   },
   "dependencies": {
     "@next/font": "13.1.2",
+    "cypress": "^12.3.0",
+    "next": "13.1.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "typescript": "4.9.4",
+  "devDependencies": {
     "@types/node": "18.11.18",
+    "graphql-faker": "^2.0.0-rc.25",
     "@types/react": "18.0.26",
     "@types/react-dom": "18.0.10",
     "eslint": "8.31.0",
     "eslint-config-next": "13.1.2",
-    "next": "13.1.2",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "typescript": "4.9.4"
+    "stylelint": "14.16.1"
   }
 }
