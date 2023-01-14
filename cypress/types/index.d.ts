@@ -1,1 +1,1 @@
-/// <reference types="./cypress.d.ts" />
+/// <reference types="./cypress" />

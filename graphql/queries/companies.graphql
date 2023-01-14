@@ -1,0 +1,5 @@
+query companies($input: Pagination) {
+  allCompanies(input: $input) {
+    id
+  }
+}

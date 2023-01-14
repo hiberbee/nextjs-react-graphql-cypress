@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JsonSchemaMappingsProjectConfiguration">
+    <state>
+      <map>
+        <entry key="codegen">
+          <value>
+            <SchemaInfo>
+              <option name="generatedName" value="New Schema" />
+              <option name="name" value="codegen" />
+              <option name="relativePathToSchema" value="https://gist.githubusercontent.com/VladyslavVolkov/5cd6da8ba581f505c094120e59779f6f/raw/406d4fd22e3851addf2014a78c4b4eba757b32c2/codegen.yml" />
+              <option name="patterns">
+                <list>
+                  <Item>
+                    <option name="path" value="codegen.yml" />
+                  </Item>
+                </list>
+              </option>
+            </SchemaInfo>
+          </value>
+        </entry>
+      </map>
+    </state>
+  </component>
+</project>

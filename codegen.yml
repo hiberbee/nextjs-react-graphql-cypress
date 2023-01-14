@@ -1,0 +1,19 @@
+schema: http://localhost:4000/graphql
+documents:
+  - graphql/**/*.graphql
+config:
+  useTypeImports: true
+
+generates:
+  types/api.d.ts:
+    config:
+      noExport: true
+    plugins:
+      - typescript
+      - typescript-operations
+  cypress/support/client.ts:
+    plugins:
+      - typescript-generic-sdk:
+          rawRequest: true
+          documentMode: string
+          optimizeDocumentNode: true
