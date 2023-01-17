@@ -43,7 +43,7 @@ type Pagination = {
 type Company = {
   __typename?: 'Company';
   employees?: Maybe<Array<Employee>>;
-  id?: Maybe<Scalars['ID']>;
+  id: Scalars['ID'];
   industry?: Maybe<Scalars['String']>;
   name?: Maybe<Scalars['String']>;
 };
@@ -53,7 +53,7 @@ type Employee = {
   address?: Maybe<Scalars['String']>;
   company?: Maybe<Company>;
   firstName?: Maybe<Scalars['String']>;
-  id?: Maybe<Scalars['ID']>;
+  id: Scalars['ID'];
   lastName?: Maybe<Scalars['String']>;
   subordinates?: Maybe<Array<Employee>>;
 };
@@ -243,4 +243,4 @@ type CompaniesQueryVariables = Exact<{
 }>;
 
 
-type CompaniesQuery = { __typename?: 'Query', allCompanies?: Array<{ __typename?: 'Company', id?: string | null }> | null };
+type CompaniesQuery = { __typename?: 'Query', allCompanies?: Array<{ __typename?: 'Company', id: string }> | null };

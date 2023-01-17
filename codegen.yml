@@ -5,13 +5,13 @@ config:
   useTypeImports: true
 
 generates:
-  types/api.d.ts:
+  cypress/types/graphql.d.ts:
     config:
       noExport: true
     plugins:
       - typescript
       - typescript-operations
-  cypress/support/client.ts:
+  cypress/support/graphql.ts:
     plugins:
       - typescript-generic-sdk:
           rawRequest: true

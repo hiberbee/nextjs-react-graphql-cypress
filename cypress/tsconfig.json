@@ -1,4 +1,5 @@
 {
+  "extends": "../tsconfig.json",
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
@@ -6,10 +7,10 @@
     "isolatedModules": false,
     "strictNullChecks": true,
     "noEmit": true,
-    "types": ["cypress", "./types", "../types"],
+    "types": ["./types", "cypress"],
     "paths": {
       "@support/*": ["./support/*"]
     }
   },
-  "include": [".", "./../node_modules/cypress", "../types", "./**/*.ts"]
+  "include": ["./**/*.ts",".", "../node_modules/cypress", ]
 }

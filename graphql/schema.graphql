@@ -34,8 +34,21 @@ input Pagination {
   offset: ID
 }
 
+input UsernamePasswordInput{
+  username: String!
+  password: String!
+}
 type Query {
   employee(id: ID): Employee
   company(id: ID): Company
   allCompanies(input:Pagination): [Company!]
+}
+
+type OAuthToken{
+  accessToken:String! @fake(type: uuid)
+  refreshToken:String! @fake(type: uuid)
+}
+
+type Mutation {
+  login(input: UsernamePasswordInput!): OAuthToken!
 }

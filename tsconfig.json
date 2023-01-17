@@ -27,7 +27,7 @@
     "target": "es5"
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules", "cypress"],
+  "exclude": ["node_modules","./cypress"],
   "references": [
     {
       "path": "./cypress/tsconfig.json"

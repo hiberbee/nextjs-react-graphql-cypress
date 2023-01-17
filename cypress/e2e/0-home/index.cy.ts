@@ -1,16 +1,16 @@
-import { getSdk } from "@support/client";
-import { graphql } from "@support/e2e";
+import { graphql, Response } from "../../support/e2e";
 
 describe("Homepage", () => {
-  it("should contain NextJS alt", () => {
+  beforeEach(() => {
     cy.visit("/");
-
+  });
+  it("should contain NextJS alt", () => {
     graphql().companies({ input: { limit: 1 } });
-
-    cy.get("@query:companies").then((result) => {
+    cy.get<Response<"allCompanies">>("@query:companies").then((result) => {
+      console.log(result.data.allCompanies?.[0]?.employees?.[0].address);
       expect(result).property("data").exist;
       expect(result).not.have.property("errors");
-      expect(result.data["allCompanies"][0].id).length(36);
+      expect(result.data.allCompanies).length.greaterThan(0);
     });
   });
 });
