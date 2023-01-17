@@ -1,0 +1,181 @@
+_type: export
+__export_format: 4
+__export_date: 2023-01-17T23:13:59.078Z
+__export_source: insomnia.desktop.app:v2022.7.4
+resources:
+  - _id: req_67ef3e9765214a52ae6180adccc3a53c
+    parentId: wrk_d460ea407b8449f0ac9605311e66ad70
+    modified: 1673925851153
+    created: 1673920861020
+    url: "{{ _.baseUrl }}{{ _.apiUri }}"
+    name: Companies
+    description: ""
+    method: POST
+    body:
+      mimeType: application/graphql
+      text: '{"query":"query companies($input: Pagination) {\n\tallCompanies(input:
+        $input)
+        {\n\t\tid\n\t}\n}\n","variables":{"input":{"limit":1}},"operationName":"companies"}'
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: "{% response 'body', 'req_6d498b424ed54767b5f54e62df2798c6',
+        'b64::JC5kYXRhLmxvZ2luLmFjY2Vzc1Rva2Vu::46b', 'no-history', 60 %}"
+    metaSortKey: -1673878732936
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: wrk_d460ea407b8449f0ac9605311e66ad70
+    parentId: null
+    modified: 1673995488428
+    created: 1673920595975
+    name: GraphQL Requests
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_6d498b424ed54767b5f54e62df2798c6
+    parentId: wrk_d460ea407b8449f0ac9605311e66ad70
+    modified: 1673995328482
+    created: 1673924914619
+    url: "{{ _.baseUrl }}{{ _.apiUri }}"
+    name: Login
+    description: ""
+    method: POST
+    body:
+      mimeType: application/graphql
+      text: '{"query":"mutation login($input: UsernamePasswordInput!)
+        {\n\tlogin(input: $input)
+        {\n\t\taccessToken\n\t\trefreshToken\n\t}\n}\n","operationName":"login","variables":{"input":{"username":"{{
+        _.fixtures.users.FakeAdmin.username }}","password":"{{
+        _.fixtures.users.FakeAdmin.password }}"}}}'
+    parameters: []
+    headers:
+      - id: pair_ba9b9c7e32754b0987631dd6ac7de5cb
+        name: Content-Type
+        value: a
+        description: ""
+    authentication: {}
+    metaSortKey: -1673878732986
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_0c1b88e7397240e9b48872d9b043f8a9
+    parentId: wrk_d460ea407b8449f0ac9605311e66ad70
+    modified: 1673995473913
+    created: 1673995356126
+    url: "{{ _.baseUrl }}{{ _.apiUri }}"
+    name: Options
+    description: ""
+    method: POST
+    body:
+      mimeType: application/graphql
+      text: '{"query":"mutation login($input: UsernamePasswordInput!)
+        {\n\tlogin(input: $input)
+        {\n\t\taccessToken\n\t\trefreshToken\n\t}\n}\n","operationName":"login","variables":{"input":{"username":"{{
+        _.fixtures.users.FakeAdmin.username }}","password":"{{
+        _.fixtures.users.FakeAdmin.password }}"}}}'
+    parameters: []
+    headers:
+      - id: pair_ba9b9c7e32754b0987631dd6ac7de5cb
+        name: Content-Type
+        value: application/json
+        description: ""
+    authentication: {}
+    metaSortKey: -1673878732961
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_4c2e33d7975239f7989b39b8ab7cfa766edce6b3
+    parentId: wrk_d460ea407b8449f0ac9605311e66ad70
+    modified: 1673925014999
+    created: 1673920595978
+    name: Base Environment
+    data:
+      baseUrl: http://localhost:3000
+      apiUri: /graphql
+    dataPropertyOrder:
+      "&":
+        - baseUrl
+        - apiUri
+    color: null
+    isPrivate: false
+    metaSortKey: 1673920595978
+    _type: environment
+  - _id: jar_582b939a6662a636fc2a3a0ab234d619d4b6a085
+    parentId: wrk_d460ea407b8449f0ac9605311e66ad70
+    modified: 1673920595979
+    created: 1673920595979
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
+  - _id: spc_c0b8fc4ad9e743f7914fe5ffaf8007e5
+    parentId: wrk_d460ea407b8449f0ac9605311e66ad70
+    modified: 1673920595976
+    created: 1673920595976
+    fileName: GraphQL Requests
+    contents: ""
+    contentType: yaml
+    _type: api_spec
+  - _id: env_fb7c49e538674eceb752b1351880f3b2
+    parentId: env_4c2e33d7975239f7989b39b8ab7cfa766edce6b3
+    modified: 1673995031676
+    created: 1673920608465
+    name: dev
+    data:
+      baseUrl: http://localhost:4000
+      apiUri: /graphql
+      fixtures:
+        users:
+          FakeAdmin:
+            username: Night King
+            password: bran
+    dataPropertyOrder:
+      "&":
+        - baseUrl
+        - apiUri
+        - fixtures
+      "&~|fixtures":
+        - users
+      "&~|fixtures~|users":
+        - FakeAdmin
+      "&~|fixtures~|users~|FakeAdmin":
+        - username
+        - password
+    color: "#92d923"
+    isPrivate: false
+    metaSortKey: 1673920608465
+    _type: environment
+  - _id: env_68fc0c70c3f64db5ac91dbe29274de85
+    parentId: env_4c2e33d7975239f7989b39b8ab7cfa766edce6b3
+    modified: 1673995039553
+    created: 1673920624240
+    name: test
+    data:
+      baseUrl: http://localhost:3000
+      apiUri: /graphql
+    dataPropertyOrder:
+      "&":
+        - baseUrl
+        - apiUri
+    color: "#00a2ca"
+    isPrivate: false
+    metaSortKey: 1673920608515
+    _type: environment

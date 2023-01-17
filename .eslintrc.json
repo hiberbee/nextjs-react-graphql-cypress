@@ -1,3 +1,27 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "eslint:recommended",
+    "prettier",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "next"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "ignorePatterns": ["cypress/types/**.d.ts", "cypress/support/graphql.ts"],
+  "overrides": [
+    {
+      "files": [
+        "*.cy.ts"
+      ],
+      "extends": [
+        "plugin:cypress/recommended"
+      ]
+    }
+  ]
 }

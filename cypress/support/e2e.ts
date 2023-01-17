@@ -12,20 +12,19 @@
 // You can read more here:
 // https://on.cypress.io/configuration
 // ***********************************************************
-import "./commands";
 
-import { getSdk } from "./graphql";
-import { parse, type OperationDefinitionNode } from "graphql";
+import { getSdk } from "./graphql"
+import { parse, type OperationDefinitionNode } from "graphql"
 export interface Response<T extends keyof Query> {
-  data: { [K in T]: Query[T] };
-  errors: Maybe<{ name: string }[]>;
+  data: { [K in T]: Query[T] }
+  errors: Maybe<{ name: string }[]>
 }
 
 const graphql = () => {
   return getSdk((query, variables) => {
-    const operation = parse(query).definitions[0] as OperationDefinitionNode;
-    cy.log("graphql", operation);
-    const alias = [operation.operation, operation.name?.value].join(":");
+    const operation = parse(query).definitions[0] as OperationDefinitionNode
+    cy.log("graphql", operation)
+    const alias = [operation.operation, operation.name?.value].join(":")
     cy.request({
       url: Cypress.env("API_URL") ?? "/graphql",
       headers: { "Content-Type": "application/json" },
@@ -33,9 +32,9 @@ const graphql = () => {
       body: { query, variables },
     })
       .then((response) => response.body)
-      .as(alias);
-    return Promise.resolve();
-  });
-};
+      .as(alias)
+    return Promise.resolve()
+  })
+}
 
-export { graphql };
+export { graphql }

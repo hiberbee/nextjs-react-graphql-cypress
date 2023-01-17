@@ -1,3 +1,3 @@
 /// <reference types="cypress" />
-import "./cypress";
-import "./graphql";
+import "./cypress"
+import "./graphql"

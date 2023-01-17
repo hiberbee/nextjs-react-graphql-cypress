@@ -1,16 +1,27 @@
 {
-  "extends": "../tsconfig.json",
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
-    "baseUrl": ".",
-    "rootDir": ".",
     "isolatedModules": false,
+    "baseUrl": ".",
     "strictNullChecks": true,
+    "strict": true,
+    "allowJs": false,
+    "skipLibCheck": true,
+    "noEmitHelpers": true,
+    "noEmitOnError": true,
+    "lib": [
+      "DOM",
+      "ESNext"
+    ],
     "noEmit": true,
-    "types": ["./types", "cypress"],
     "paths": {
-      "@support/*": ["./support/*"]
-    }
+      "@support/*": [
+        "./support/*"
+      ]
+    },
+    "rootDir": "."
   },
-  "include": ["./**/*.ts",".", "../node_modules/cypress", ]
+  "include": [
+    "./**/*"
+  ]
 }

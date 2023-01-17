@@ -1,5 +1,9 @@
 {
   "schemaPath": "./graphql/schema.graphql",
+  "includes": [
+    "./graphql/**/*.graphql",
+    "./node_modules/graphql-faker/dist/fake_definition.js"
+  ],
   "extensions": {
     "endpoints": {
       "development": {
