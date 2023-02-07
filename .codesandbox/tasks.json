@@ -45,8 +45,8 @@
       "runAtStart": false
     },
     "test:ci": {
-      "name": "test:ci",
-      "command": "yarn test:ci"
+      "name": "test:e2e",
+      "command": "yarn test:e2e"
     }
   }
 }

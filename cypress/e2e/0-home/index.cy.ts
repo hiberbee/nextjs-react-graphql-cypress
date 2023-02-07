@@ -1,15 +1,20 @@
+import { Sdk } from "@support/graphql"
+import { graphql } from "@support/e2e"
+import { any } from "cypress/types/bluebird"
+
 describe("Homepage", () => {
   beforeEach(() => {
     cy.visit("/")
   })
   it("should valid response", () => {
-    cy.graphql()
-      .then((api) => api.companies({ input: { limit: 1 } }))
-      .then((result) => {
-        console.log(result.data.allCompanies?.[0]?.employees?.[0].address)
-        expect(result).property("data").exist
-        expect(result).not.have.property("errors")
-        expect(result.data.allCompanies).length.greaterThan(0)
-      })
+    graphql().companies({ input: { limit: 1 } })
+
+    cy.get("@query:companies").then((result: { data: unknown }) => {
+      const data = result.data as Query
+      console.log(data)
+      expect(result).property("data").exist
+      expect(result).not.have.property("errors")
+      expect(data.allCompanies).length.greaterThan(0)
+    })
   })
 })

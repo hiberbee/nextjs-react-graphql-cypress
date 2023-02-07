@@ -8,8 +8,8 @@
     "start": "next start",
     "api": "graphql-faker --port=4000 --open graphql/schema.graphql",
     "generate": "graphql-codegen",
-    "test": "cypress open",
-    "test:ci": "cross-env CI=true APP_ENV=staging cypress run",
+    "test": "cypress open --port=5000 --browser=/usr/bin/chromium",
+    "test:e2e": "cross-env CI=true APP_ENV=staging cypress run --e2e",
     "lint": "next lint"
   },
   "prettier": {

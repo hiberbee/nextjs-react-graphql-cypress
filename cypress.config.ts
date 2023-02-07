@@ -1,19 +1,14 @@
 import { loadEnvConfig } from "@next/env"
 import { defineConfig } from "cypress"
 
-const { combinedEnv } = loadEnvConfig(process.cwd())
+const loadEnv = () => loadEnvConfig(process.cwd()).combinedEnv
 
 export default defineConfig({
-  experimentalStudio: true,
   viewportHeight: 1080,
   viewportWidth: 1920,
   video: false,
-  nodeVersion: "system",
+  port: 5000,
   screenshotOnRunFailure: false,
-  experimentalFetchPolyfill: true,
-  experimentalWebKitSupport: true,
-  env: combinedEnv,
-  e2e: {
-    baseUrl: "http://localhost:3000"
-  }
+  env: loadEnv(),
+  e2e: { baseUrl: loadEnv().CYPRESS_BASE_URL },
 })
