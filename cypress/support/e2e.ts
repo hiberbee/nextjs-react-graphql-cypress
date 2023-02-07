@@ -20,8 +20,8 @@ export interface Response<T extends keyof Query> {
   errors: Maybe<{ name: string }[]>
 }
 
-const graphql = () => {
-  return getSdk((query, variables) => {
+const graphql = () =>
+  getSdk((query, variables) => {
     const operation = parse(query).definitions[0] as OperationDefinitionNode
     cy.log("graphql", operation)
     const alias = [operation.operation, operation.name?.value].join(":")
@@ -35,6 +35,5 @@ const graphql = () => {
       .as(alias)
     return Promise.resolve()
   })
-}
 
 export { graphql }

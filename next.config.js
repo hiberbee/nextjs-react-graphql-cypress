@@ -3,13 +3,13 @@ const nextConfig = {
   rewrites: () => [
     {
       source: "/graphql",
-      destination: "http://localhost:4000",
+      destination: process.env.API_URL,
     },
   ],
   env: {
     API_URL: process.env.API_URL,
   },
   reactStrictMode: true,
-};
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig

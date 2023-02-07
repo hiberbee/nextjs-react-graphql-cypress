@@ -1,3 +1,3 @@
 /// <reference types="cypress" />
-import "./cypress"
-import "./graphql"
+/// <reference path="./cypress.d.ts" />
+/// <reference path="./graphql.d.ts" />
