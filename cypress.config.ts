@@ -7,6 +7,7 @@ export default defineConfig({
   viewportHeight: 1080,
   viewportWidth: 1920,
   video: false,
+  port: 5000,
   experimentalStudio: true,
   screenshotOnRunFailure: false,
   env,
