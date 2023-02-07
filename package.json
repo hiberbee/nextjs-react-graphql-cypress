@@ -9,6 +9,7 @@
     "api": "graphql-faker --port=4000 --open graphql/schema.graphql",
     "generate": "graphql-codegen",
     "test": "cypress open",
+    "test:ci": "cross-env CI=true APP_ENV=staging cypress run",
     "lint": "next lint"
   },
   "prettier": {
@@ -37,6 +38,7 @@
     "@typescript-eslint/parser": "^5.48.2",
     "cross-fetch": "^3.1.5",
     "cypress": "^12.3.0",
+    "cross-env": "latest",
     "eslint": "^8.32.0",
     "eslint-config-react-app": "^7.0.1",
     "eslint-config-next": "^13.1.2",

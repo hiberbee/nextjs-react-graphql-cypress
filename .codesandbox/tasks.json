@@ -46,7 +46,7 @@
     },
     "test:ci": {
       "name": "test:ci",
-      "command": "test:ci"
+      "command": "yarn test:ci"
     }
   }
 }
