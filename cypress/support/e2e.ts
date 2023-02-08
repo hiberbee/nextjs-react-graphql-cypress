@@ -16,11 +16,6 @@
 import { getSdk } from "@support/graphql"
 import { parse, type OperationDefinitionNode } from "graphql"
 
-export interface Response<T extends keyof Query> {
-  data: { [K in T]: Query[T] }
-  errors: Maybe<{ name: string }[]>
-}
-
 const graphql = getSdk((query, variables) => {
   const operation = parse(query).definitions[0] as OperationDefinitionNode
   cy.log("graphql", operation)
