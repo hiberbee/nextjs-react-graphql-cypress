@@ -1,14 +1,11 @@
-import { Sdk } from "@support/graphql"
 import { graphql } from "@support/e2e"
-import { any } from "cypress/types/bluebird"
 
 describe("Homepage", () => {
   beforeEach(() => {
     cy.visit("/")
   })
   it("should valid response", () => {
-    graphql().companies({ input: { limit: 1 } })
-
+    graphql.companies({ input: { limit: 1 } })
     cy.get("@query:companies").then((result: { data: unknown }) => {
       const data = result.data as Query
       console.log(data)
