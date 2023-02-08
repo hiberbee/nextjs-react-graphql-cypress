@@ -7,14 +7,14 @@
     "strict": true,
     "allowJs": false,
     "skipLibCheck": true,
-    "noEmitHelpers": true,
-    "noEmitOnError": true,
     "lib": ["DOM", "ESNext"],
-    "types": ["../node_modules/cypress", "./types"],
+    "moduleResolution": "Node",
+    "types": ["node", "cypress", "@types"],
     "paths": {
-      "@support/*": ["./support/*"]
-    },
-    "rootDir": "."
+      "@support/*": ["./support/*"],
+      "@types/*": ["./types/*"],
+      "@fixtures/*": ["./fixtures/*"]
+    }
   },
-  "include": ["./**/*", "../node_modules/cypress"]
+  "include": ["./", "../node_modules/cypress"]
 }
